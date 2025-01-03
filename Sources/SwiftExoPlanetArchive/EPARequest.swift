@@ -16,17 +16,17 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI
     private let table:EPATable
     private let fields:[String]
     private(set) var parameters:[EPAParameter]
-    private let outputFormat:EPAOutput
+    private let format:EPAFormat
     
-    public init(table: EPATable, fields: [String], parameters: [EPAParameter], outputFormat: EPAOutput = .json) {
+    public init(table: EPATable, fields: [String], parameters: [EPAParameter], format: EPAFormat = .json) {
         self.table = table
         self.fields = fields
         self.parameters = parameters
-        self.outputFormat = outputFormat
+        self.format = format
     }
     
     
-    private func getSelectQuery() -> String {
+    public func getSelectQuery() -> String {
         let selectFields = fields.joined(separator: ",")
         let conditions = parameters.map{$0.getPredicate()}.joined(separator: " ")
         return "SELECT \(selectFields) fROM \(table) WHERE \(conditions)".replacingOccurrences(of: " ", with: "+")
@@ -35,7 +35,7 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI
     
     public func getUrl() -> URL {
         var url = URLComponents(string: APIUrl)
-        url!.queryItems = [URLQueryItem(name: "query", value: self.getSelectQuery())] + [URLQueryItem(name: "format", value: self.outputFormat.id)]
+        url!.queryItems = [URLQueryItem(name: "query", value: self.getSelectQuery())] + [URLQueryItem(name: "format", value: self.format.id)]
         return url!.url!
     }
 

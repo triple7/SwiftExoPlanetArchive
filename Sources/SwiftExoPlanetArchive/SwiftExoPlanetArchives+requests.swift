@@ -26,6 +26,65 @@ extension SwiftExoPlanetArchive {
         }
         return !gotError
     }
-    
+
+    public func queryEPA(table: EPATable, fields: [String], parameters: [EPAParameter], format: EPAFormat = .json, closure: @escaping (EPAResponse)-> Void) {
+        /** Gets a TAP (Table Access protocol) result
+         Params:
+         table: the table to query
+         fields: which fields to use
+         params: the WHERe clause elements
+         format: what format to return
+         closure: the resulting json data
+         */
+        let request = EPARequest(table: table, fields: fields, parameters: parameters, format: format)
+        let configuration = URLSessionConfiguration.ephemeral
+        let queue = OperationQueue.main
+        let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
+        
+        let task = session.dataTask(with: request.getUrl()) { [weak self] data, response, error in
+            
+            var result = EPAResponse()
+            if self!.requestIsValid(error: error, response: response) {
+                switch table {
+                case .spectra:
+                    result.setSpectraResponse(try! JSONDecoder().decode(SpectraResponse.self, from: data!))
+                case .pscomppars:
+                    result.setPscompparsResponse(try! JSONDecoder().decode(PscompparsResponse.self, from: data!))
+                case .superwasptimeseries:
+                    result.setSuperwasptimeseriesResponse(try! JSONDecoder().decode(SuperwasptimeseriesResponse.self, from: data!))
+                case .kelttimeseries:
+                    result.setKelttimeseriesResponse(try! JSONDecoder().decode(KelttimeseriesResponse.self, from: data!))
+                case .stellarhosts:
+                    result.setStellarhostsResponse(try! JSONDecoder().decode(StellarhostsResponse.self, from: data!))
+                case .transitspec:
+                    result.setTransitspecResponse(try! JSONDecoder().decode(TransitspecResponse.self, from: data!))
+                case .emissionspec:
+                    result.setEmissionspecResponse(try! JSONDecoder().decode(EmissionspecResponse.self, from: data!))
+                case .ps:
+                    result.setPsResponse(try! JSONDecoder().decode(PsResponse.self, from: data!))
+                case .keplernames:
+                    result.setKeplernamesResponse(try! JSONDecoder().decode(KeplernamesResponse.self, from: data!))
+                case .k2names:
+                    result.setK2namesResponse(try! JSONDecoder().decode(K2namesResponse.self, from: data!))
+                case .toi:
+                    result.setToiResponse(try! JSONDecoder().decode(ToiResponse.self, from: data!))
+                case .ukirttimeseries:
+                    result.setUkirttimeseriesResponse(try! JSONDecoder().decode(UkirttimeseriesResponse.self, from: data!))
+                case .ml:
+                    result.setMlResponse(try! JSONDecoder().decode(MlResponse.self, from: data!))
+                case .object_aliases:
+                    result.setObject_aliasesResponse(try! JSONDecoder().decode(Object_aliasesResponse.self, from: data!))
+                default:
+                    break
+                }
+                
+                self?.sysLog.append(EPASyslog(log: .OK, message: "query \(request.getSelectQuery()) result downloaded"))
+            }
+            closure(result)
+            return
+        }
+        task.resume()
+    }
+
     
 }

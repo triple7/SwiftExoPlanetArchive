@@ -1,5 +1,80 @@
+public struct EPAResponse:Codable {
+    public var spectraResponse:SpectraResponse?
+    public var pscompparsResponse:PscompparsResponse?
+    public var superwasptimeseriesResponse:SuperwasptimeseriesResponse?
+    public var kelttimeseriesResponse:KelttimeseriesResponse?
+    public var stellarhostsResponse:StellarhostsResponse?
+    public var transitspecResponse:TransitspecResponse?
+    public var emissionspecResponse:EmissionspecResponse?
+    public var psResponse:PsResponse?
+    public var keplernamesResponse:KeplernamesResponse?
+    public var k2namesResponse:K2namesResponse?
+    public var toiResponse:ToiResponse?
+    public var ukirttimeseriesResponse:UkirttimeseriesResponse?
+    public var mlResponse:MlResponse?
+    public var object_aliasesResponse:Object_aliasesResponse?
 
-public struct spectraResponse:Codable {
+    
+    public mutating func setSpectraResponse(_ spectraResponse: SpectraResponse) {
+    self.spectraResponse = spectraResponse
+    }
+    
+    public mutating func setPscompparsResponse(_ pscompparsResponse: PscompparsResponse) {
+    self.pscompparsResponse = pscompparsResponse
+    }
+    
+    public mutating func setSuperwasptimeseriesResponse(_ superwasptimeseriesResponse: SuperwasptimeseriesResponse) {
+    self.superwasptimeseriesResponse = superwasptimeseriesResponse
+    }
+    
+    public mutating func setKelttimeseriesResponse(_ kelttimeseriesResponse: KelttimeseriesResponse) {
+    self.kelttimeseriesResponse = kelttimeseriesResponse
+    }
+    
+    public mutating func setStellarhostsResponse(_ stellarhostsResponse: StellarhostsResponse) {
+    self.stellarhostsResponse = stellarhostsResponse
+    }
+    
+    public mutating func setTransitspecResponse(_ transitspecResponse: TransitspecResponse) {
+    self.transitspecResponse = transitspecResponse
+    }
+    
+    public mutating func setEmissionspecResponse(_ emissionspecResponse: EmissionspecResponse) {
+    self.emissionspecResponse = emissionspecResponse
+    }
+    
+    public mutating func setPsResponse(_ psResponse: PsResponse) {
+    self.psResponse = psResponse
+    }
+    
+    public mutating func setKeplernamesResponse(_ keplernamesResponse: KeplernamesResponse) {
+    self.keplernamesResponse = keplernamesResponse
+    }
+    
+    public mutating func setK2namesResponse(_ k2namesResponse: K2namesResponse) {
+    self.k2namesResponse = k2namesResponse
+    }
+    
+    public mutating func setToiResponse(_ toiResponse: ToiResponse) {
+    self.toiResponse = toiResponse
+    }
+    
+    public mutating func setUkirttimeseriesResponse(_ ukirttimeseriesResponse: UkirttimeseriesResponse) {
+    self.ukirttimeseriesResponse = ukirttimeseriesResponse
+    }
+    
+    public mutating func setMlResponse(_ mlResponse: MlResponse) {
+    self.mlResponse = mlResponse
+    }
+    
+    public mutating func setObject_aliasesResponse(_ object_aliasesResponse: Object_aliasesResponse) {
+    self.object_aliasesResponse = object_aliasesResponse
+    }
+
+}
+
+
+public struct SpectraResponse:Codable {
 var pl_name:String?
 var spec_type:String?
 var authors:String?
@@ -15,7 +90,7 @@ var bibcode:String?
 var spec_path:String?
 }
 
-public struct pscompparsResponse:Codable {
+public struct PscompparsResponse:Codable {
 var pl_orbeccenstr:String?
 var pl_orbeccen_reflink:String?
 var pl_eqt:Double?
@@ -398,7 +473,7 @@ var pl_orbeccenerr2:Double?
 var pl_orbeccenlim:Int?
 }
 
-public struct superwasptimeseriesResponse:Codable {
+public struct SuperwasptimeseriesResponse:Codable {
 var sourceid:String?
 var obsstart:String?
 var obsstop:String?
@@ -430,7 +505,7 @@ var z:Double?
 var spt_ind:Int?
 }
 
-public struct kelttimeseriesResponse:Codable {
+public struct KelttimeseriesResponse:Codable {
 var kelt_sourceid:String?
 var kelt_field:String?
 var kelt_orientation:String?
@@ -461,7 +536,7 @@ var z:Double?
 var spt_ind:Int?
 }
 
-public struct stellarhostsResponse:Codable {
+public struct StellarhostsResponse:Codable {
 var st_lum:Double?
 var st_lumerr1:Double?
 var st_lumerr2:Double?
@@ -599,7 +674,7 @@ var st_vsinerr2:Double?
 var st_vsinlim:Int?
 }
 
-public struct transitspecResponse:Codable {
+public struct TransitspecResponse:Codable {
 var centralwavelng:Double?
 var bandwidth:Double?
 var plntransdep:Double?
@@ -629,7 +704,7 @@ var plntname:String?
 var plntranreflink:String?
 }
 
-public struct emissionspecResponse:Codable {
+public struct EmissionspecResponse:Codable {
 var centralwavelng:Double?
 var bandwidth:Double?
 var especlipdep:Double?
@@ -650,7 +725,7 @@ var note:String?
 var plntreflink:String?
 }
 
-public struct psResponse:Codable {
+public struct PsResponse:Codable {
 var pl_name:String?
 var pl_letter:String?
 var hostname:String?
@@ -1007,20 +1082,20 @@ var releasedate:String?
 var dkin_flag:Int?
 }
 
-public struct keplernamesResponse:Codable {
+public struct KeplernamesResponse:Codable {
 var kepid:String?
 var pl_name:String?
 var koi_name:String?
 var kepler_name:String?
 }
 
-public struct k2namesResponse:Codable {
+public struct K2namesResponse:Codable {
 var k2_name:String?
 var pl_name:String?
 var epic_id:String?
 }
 
-public struct toiResponse:Codable {
+public struct ToiResponse:Codable {
 var tid:Int?
 var toi:String?
 var toipfx:String?
@@ -1113,7 +1188,7 @@ var rowupdate:String?
 var release_date:String?
 }
 
-public struct ukirttimeseriesResponse:Codable {
+public struct UkirttimeseriesResponse:Codable {
 var sourceid:String?
 var phot_method:String?
 var obs_year:Int?
@@ -1155,7 +1230,7 @@ var z:Double?
 var spt_ind:Int?
 }
 
-public struct mlResponse:Codable {
+public struct MlResponse:Codable {
 var sy_hmag:Double?
 var sy_hmaglim:Int?
 var sy_hmagstr:String?
@@ -1600,11 +1675,11 @@ var ml_extkfld:Double?
 var ml_extkfldstr:String?
 }
 
-public struct object_aliasesResponse:Codable {
+public struct Object_aliasesResponse:Codable {
 var resolved_name:String?
 }
 
-public struct k2pandcResponse:Codable {
+public struct K2pandcResponse:Codable {
 var sy_gmagstr:String?
 var sy_gaiamag:Double?
 var sy_gaiamagerr1:Double?

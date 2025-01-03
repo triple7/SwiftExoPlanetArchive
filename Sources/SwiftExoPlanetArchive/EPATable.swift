@@ -5,7 +5,7 @@
 //  Created by Yuma decaux on 26/12/2024.
 //
 
-public enum EPAOutput:String, Codable, Identifiable {
+public enum EPAFormat:String, Codable, Identifiable {
     case csv
     case json
     case ascii
@@ -16,15 +16,6 @@ public enum EPAOutput:String, Codable, Identifiable {
     }
 }
 
-public enum EPAParam:String, Codable {
-    case table
-    case format
-    
-    
-    public var id:String {
-        return self.rawValue
-    }
-}
 
 public enum EPATable: String, Codable, Identifiable, CaseIterable {
     case spectra
