@@ -45,6 +45,7 @@ extension SwiftExoPlanetArchive {
             
             var result = EPAResponse()
             if self!.requestIsValid(error: error, response: response) {
+                print(String(data: data!, encoding: .utf8))
                 switch table {
                 case .spectra:
                     result.setSpectraResponse(try! JSONDecoder().decode(SpectraResponse.self, from: data!))
