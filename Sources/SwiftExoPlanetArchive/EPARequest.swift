@@ -28,8 +28,8 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
     
     public func getSelectQuery() -> String {
         let selectFields = fields.joined(separator: ",")
-        let conditions = parameters.map{$0.getPredicate()}.joined(separator: " ")
-        return "select+\(selectFields)+from+\(table)+where+\(conditions)".replacingOccurrences(of: " ", with: "+")
+        let conditions = parameters.map{$0.getPredicate()}.joined(separator: "+")
+        return "select+\(selectFields)+from+\(table)+where+\(conditions)"
         }
     
     

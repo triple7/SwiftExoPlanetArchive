@@ -27,9 +27,9 @@ public struct EPAParameter:Codable {
     
     
     public func getPredicate() -> String {
-        var output = "\(variable) \(operation.id)"
-        output = operation == .like ? "\(output) '\(value)" : "\(output) \(value)"
-        return postOperator == nil ? output : "\(output) \(postOperator!)"
+        var output = "\(variable)+\(operation.id)"
+        output = operation == .like ? "\(output)+'\(value)" : "\(output)+\(value)"
+        return postOperator == nil ? output : "\(output)+\(postOperator!)"
     }
     
 }
