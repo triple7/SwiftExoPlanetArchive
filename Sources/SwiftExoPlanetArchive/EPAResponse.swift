@@ -1,73 +1,73 @@
 public struct EPAResponse:Codable {
-    public var spectraResponse:SpectraResponse?
-    public var pscompparsResponse:PscompparsResponse?
-    public var superwasptimeseriesResponse:SuperwasptimeseriesResponse?
-    public var kelttimeseriesResponse:KelttimeseriesResponse?
-    public var stellarhostsResponse:StellarhostsResponse?
-    public var transitspecResponse:TransitspecResponse?
-    public var emissionspecResponse:EmissionspecResponse?
-    public var psResponse:PsResponse?
-    public var keplernamesResponse:KeplernamesResponse?
-    public var k2namesResponse:K2namesResponse?
-    public var toiResponse:ToiResponse?
-    public var ukirttimeseriesResponse:UkirttimeseriesResponse?
-    public var mlResponse:MlResponse?
-    public var object_aliasesResponse:Object_aliasesResponse?
+    public var spectraResponse:[SpectraResponse]?
+    public var pscompparsResponse:[PscompparsResponse]?
+    public var superwasptimeseriesResponse:[SuperwasptimeseriesResponse]?
+    public var kelttimeseriesResponse:[KelttimeseriesResponse]?
+    public var stellarhostsResponse:[StellarhostsResponse]?
+    public var transitspecResponse:[TransitspecResponse]?
+    public var emissionspecResponse:[EmissionspecResponse]?
+    public var psResponse:[PsResponse]?
+    public var keplernamesResponse:[KeplernamesResponse]?
+    public var k2namesResponse:[K2namesResponse]?
+    public var toiResponse:[ToiResponse]?
+    public var ukirttimeseriesResponse:[UkirttimeseriesResponse]?
+    public var mlResponse:[MlResponse]?
+    public var object_aliasesResponse:[Object_aliasesResponse]?
 
     
-    public mutating func setSpectraResponse(_ spectraResponse: SpectraResponse) {
+    public mutating func setSpectraResponse(_ spectraResponse: [SpectraResponse]) {
     self.spectraResponse = spectraResponse
     }
     
-    public mutating func setPscompparsResponse(_ pscompparsResponse: PscompparsResponse) {
+    public mutating func setPscompparsResponse(_ pscompparsResponse: [PscompparsResponse]) {
     self.pscompparsResponse = pscompparsResponse
     }
     
-    public mutating func setSuperwasptimeseriesResponse(_ superwasptimeseriesResponse: SuperwasptimeseriesResponse) {
+    public mutating func setSuperwasptimeseriesResponse(_ superwasptimeseriesResponse: [SuperwasptimeseriesResponse]) {
     self.superwasptimeseriesResponse = superwasptimeseriesResponse
     }
     
-    public mutating func setKelttimeseriesResponse(_ kelttimeseriesResponse: KelttimeseriesResponse) {
+    public mutating func setKelttimeseriesResponse(_ kelttimeseriesResponse: [KelttimeseriesResponse]) {
     self.kelttimeseriesResponse = kelttimeseriesResponse
     }
     
-    public mutating func setStellarhostsResponse(_ stellarhostsResponse: StellarhostsResponse) {
+    public mutating func setStellarhostsResponse(_ stellarhostsResponse: [StellarhostsResponse]) {
     self.stellarhostsResponse = stellarhostsResponse
     }
     
-    public mutating func setTransitspecResponse(_ transitspecResponse: TransitspecResponse) {
+    public mutating func setTransitspecResponse(_ transitspecResponse: [TransitspecResponse]) {
     self.transitspecResponse = transitspecResponse
     }
     
-    public mutating func setEmissionspecResponse(_ emissionspecResponse: EmissionspecResponse) {
+    public mutating func setEmissionspecResponse(_ emissionspecResponse: [EmissionspecResponse]) {
     self.emissionspecResponse = emissionspecResponse
     }
     
-    public mutating func setPsResponse(_ psResponse: PsResponse) {
+    public mutating func setPsResponse(_ psResponse: [PsResponse]) {
     self.psResponse = psResponse
     }
     
-    public mutating func setKeplernamesResponse(_ keplernamesResponse: KeplernamesResponse) {
+    public mutating func setKeplernamesResponse(_ keplernamesResponse: [KeplernamesResponse]) {
     self.keplernamesResponse = keplernamesResponse
     }
     
-    public mutating func setK2namesResponse(_ k2namesResponse: K2namesResponse) {
+    public mutating func setK2namesResponse(_ k2namesResponse: [K2namesResponse]) {
     self.k2namesResponse = k2namesResponse
     }
     
-    public mutating func setToiResponse(_ toiResponse: ToiResponse) {
+    public mutating func setToiResponse(_ toiResponse: [ToiResponse]) {
     self.toiResponse = toiResponse
     }
     
-    public mutating func setUkirttimeseriesResponse(_ ukirttimeseriesResponse: UkirttimeseriesResponse) {
+    public mutating func setUkirttimeseriesResponse(_ ukirttimeseriesResponse: [UkirttimeseriesResponse]) {
     self.ukirttimeseriesResponse = ukirttimeseriesResponse
     }
     
-    public mutating func setMlResponse(_ mlResponse: MlResponse) {
+    public mutating func setMlResponse(_ mlResponse: [MlResponse]) {
     self.mlResponse = mlResponse
     }
     
-    public mutating func setObject_aliasesResponse(_ object_aliasesResponse: Object_aliasesResponse) {
+    public mutating func setObject_aliasesResponse(_ object_aliasesResponse: [Object_aliasesResponse]) {
     self.object_aliasesResponse = object_aliasesResponse
     }
 

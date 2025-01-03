@@ -49,33 +49,33 @@ extension SwiftExoPlanetArchive {
                 print(String(data: data!, encoding: .utf8))
                 switch table {
                 case .spectra:
-                    result.setSpectraResponse(try! JSONDecoder().decode(SpectraResponse.self, from: data!))
+                    result.setSpectraResponse(try! JSONDecoder().decode([SpectraResponse].self, from: data!))
                 case .pscomppars:
-                    result.setPscompparsResponse(try! JSONDecoder().decode(PscompparsResponse.self, from: data!))
+                    result.setPscompparsResponse(try! JSONDecoder().decode([PscompparsResponse].self, from: data!))
                 case .superwasptimeseries:
-                    result.setSuperwasptimeseriesResponse(try! JSONDecoder().decode(SuperwasptimeseriesResponse.self, from: data!))
+                    result.setSuperwasptimeseriesResponse(try! JSONDecoder().decode([SuperwasptimeseriesResponse].self, from: data!))
                 case .kelttimeseries:
-                    result.setKelttimeseriesResponse(try! JSONDecoder().decode(KelttimeseriesResponse.self, from: data!))
+                    result.setKelttimeseriesResponse(try! JSONDecoder().decode([KelttimeseriesResponse].self, from: data!))
                 case .stellarhosts:
-                    result.setStellarhostsResponse(try! JSONDecoder().decode(StellarhostsResponse.self, from: data!))
+                    result.setStellarhostsResponse(try! JSONDecoder().decode([StellarhostsResponse].self, from: data!))
                 case .transitspec:
-                    result.setTransitspecResponse(try! JSONDecoder().decode(TransitspecResponse.self, from: data!))
+                    result.setTransitspecResponse(try! JSONDecoder().decode([TransitspecResponse].self, from: data!))
                 case .emissionspec:
-                    result.setEmissionspecResponse(try! JSONDecoder().decode(EmissionspecResponse.self, from: data!))
+                    result.setEmissionspecResponse(try! JSONDecoder().decode([EmissionspecResponse].self, from: data!))
                 case .ps:
-                    result.setPsResponse(try! JSONDecoder().decode(PsResponse.self, from: data!))
+                    result.setPsResponse(try! JSONDecoder().decode([PsResponse].self, from: data!))
                 case .keplernames:
-                    result.setKeplernamesResponse(try! JSONDecoder().decode(KeplernamesResponse.self, from: data!))
+                    result.setKeplernamesResponse(try! JSONDecoder().decode([KeplernamesResponse].self, from: data!))
                 case .k2names:
-                    result.setK2namesResponse(try! JSONDecoder().decode(K2namesResponse.self, from: data!))
+                    result.setK2namesResponse(try! JSONDecoder().decode([K2namesResponse].self, from: data!))
                 case .toi:
-                    result.setToiResponse(try! JSONDecoder().decode(ToiResponse.self, from: data!))
+                    result.setToiResponse(try! JSONDecoder().decode([ToiResponse].self, from: data!))
                 case .ukirttimeseries:
-                    result.setUkirttimeseriesResponse(try! JSONDecoder().decode(UkirttimeseriesResponse.self, from: data!))
+                    result.setUkirttimeseriesResponse(try! JSONDecoder().decode([UkirttimeseriesResponse].self, from: data!))
                 case .ml:
-                    result.setMlResponse(try! JSONDecoder().decode(MlResponse.self, from: data!))
+                    result.setMlResponse(try! JSONDecoder().decode([MlResponse].self, from: data!))
                 case .object_aliases:
-                    result.setObject_aliasesResponse(try! JSONDecoder().decode(Object_aliasesResponse.self, from: data!))
+                    result.setObject_aliasesResponse(try! JSONDecoder().decode([Object_aliasesResponse].self, from: data!))
                 default:
                     break
                 }
