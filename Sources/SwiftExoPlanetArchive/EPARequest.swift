@@ -29,7 +29,7 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI
     public func getSelectQuery() -> String {
         let selectFields = fields.joined(separator: ",")
         let conditions = parameters.map{$0.getPredicate()}.joined(separator: " ")
-        return "SELECT \(selectFields) fROM \(table) WHERE \(conditions)".replacingOccurrences(of: " ", with: "+")
+        return "SELECT+\(selectFields)+fROM+\(table)+WHERE+\(conditions)".replacingOccurrences(of: " ", with: "+")
         }
     
     
