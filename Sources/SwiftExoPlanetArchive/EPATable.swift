@@ -27,7 +27,7 @@ public enum EPAParam:String, Codable {
 }
 
 public enum EPATable: String, Codable, Identifiable, CaseIterable {
-    case spectra
+    public case spectra
     case td
     case pscomppars
     case superwasptimeseries
