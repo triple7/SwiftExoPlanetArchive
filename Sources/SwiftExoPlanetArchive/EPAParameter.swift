@@ -13,6 +13,14 @@ public struct EPAParameter:Codable {
     let value:String
     var postOperator:EPAOperator?
 
+    
+    public init(variable: String, operation: EPAOperator, value: String) {
+        self.variable = variable
+        self.operation = operation
+        self.value = value
+    }
+    
+    
     public mutating func setPostOperator(postOperator: EPAOperator) {
         self.postOperator = postOperator
     }
