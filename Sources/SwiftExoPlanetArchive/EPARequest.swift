@@ -12,7 +12,7 @@ public struct EPARequest {
     /** Exoplanet ARchive request formatter
      Creates a request Url from the API and configured parameters, with TAP sql like queries
      */
-private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI"
+private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
     private let table:EPATable
     private let fields:[String]
     private(set) var parameters:[EPAParameter]
@@ -29,7 +29,7 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI
     public func getSelectQuery() -> String {
         let selectFields = fields.joined(separator: ",")
         let conditions = parameters.map{$0.getPredicate()}.joined(separator: " ")
-        return "SELECT+\(selectFields)+fROM+\(table)+WHERE+\(conditions)".replacingOccurrences(of: " ", with: "+")
+        return "select+\(selectFields)+from+\(table)+where+\(conditions)".replacingOccurrences(of: " ", with: "+")
         }
     
     
