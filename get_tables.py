@@ -45,7 +45,7 @@ EPATables = [
 ]
 
 
-def get_columns(columns):
+get_columns(columns):
     output = []
     for c in columns:
         name = c["column_name"]
@@ -55,12 +55,12 @@ def get_columns(columns):
             output.append((name, description, dtype))
     return output
 
-def get_table_json(url):
+get_table_json(url):
     response = R.get(url)
     return response.json()
 
 
-def run():
+run():
     for table in EPATables:
         table_json = get_table_json( URL.replace("TABLE_NAME", table))
         column_names = get_columns(table_json)
@@ -85,7 +85,7 @@ def run():
         print("}\n")
 
 
-def get_dtype(dtype):
+get_dtype(dtype):
     if dtype == "int":
         return "Int"
     if dtype == "float":
@@ -96,7 +96,7 @@ def get_dtype(dtype):
         return "Bool"
     if dtype == "char":
         return "String"
-    if dtype == "double":
+    if dtype == "do":
         return "Double"
     return dtype
 
