@@ -32,7 +32,7 @@ extension SwiftExoPlanetArchive {
         return !gotError
     }
 
-    public func queryEPA(table: EPATable, fields: [String], parameters: [EPAParameter], format: EPAFormat = .json, closure: @escaping (EPAResponse)-> Void) {
+    public func queryEPA(selectQuery: String? = nil, table: EPATable, fields: [String], parameters: [EPAParameter], format: EPAFormat = .json, closure: @escaping (EPAResponse)-> Void) {
         /** Gets a TAP (Table Access protocol) result
          Params:
          table: the table to query
@@ -41,13 +41,20 @@ extension SwiftExoPlanetArchive {
          format: what format to return
          closure: the resulting json data
          */
-        let request = EPARequest(table: table, fields: fields, parameters: parameters, format: format)
-        print(request.getUrl().absoluteString)
+        
+
+        var request:EPARequest
+        if let selectQuery = selectQuery {
+            request = EPARequest()
+        } else {
+            request = EPARequest(table: table, fields: fields, parameters: parameters, format: format)
+        }
+
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
         
-        let task = session.dataTask(with: request.getUrl()) { [weak self] data, response, error in
+        let task = session.dataTask(with: request.getUrl(selectQuery)) { [weak self] data, response, error in
             
             var result = EPAResponse()
             if self!.requestIsValid(error: error, response: response) {

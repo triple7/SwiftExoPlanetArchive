@@ -25,6 +25,13 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
         self.format = format
     }
     
+    public init(format: EPAFormat = .json) {
+        self.table = .stellarhosts
+        self.fields = []
+        self.parameters = []
+        self.format = format
+    }
+
     
     public func getSelectQuery() -> String {
         let selectFields = fields.joined(separator: ",")
@@ -33,9 +40,12 @@ private let APIUrl = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
         }
     
     
-    public func getUrl() -> URL {
+    public func getUrl(_ query: String? = nil) -> URL {
+        let tapQuery = query != nil ? query! : self.getSelectQuery()
+
         var url = URLComponents(string: APIUrl)
-        url!.queryItems = [URLQueryItem(name: "query", value: self.getSelectQuery())] + [URLQueryItem(name: "format", value: self.format.id)]
+        url!.queryItems = [
+            URLQueryItem(name: "query", value: tapQuery)] + [URLQueryItem(name: "format", value: self.format.id)]
         return url!.url!
     }
 
