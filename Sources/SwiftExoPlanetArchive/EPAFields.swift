@@ -4027,7 +4027,7 @@ case .sy_gmagerr2: return "g (Sloan) Magnitude Lower Unc"
 }
 }
 
-enum tic_v8column:String, CaseIterable {
+public enum tic_v8column:String, CaseIterable {
     case id
     case version
     case twomass
