@@ -31,6 +31,7 @@ public enum EPATable: String, Codable, Identifiable, CaseIterable {
     case keplernames
     case k2names
     case toi
+    case tic_v8
     case cumulative
     case q1_q6_koi
     case q1_q8_koi
@@ -155,6 +156,7 @@ public enum EPATable: String, Codable, Identifiable, CaseIterable {
         case .keplernames: return "Kepler mission planetary candidate and confirmed planet names."
         case .k2names: return "K2 mission planetary candidate and confirmed planet names."
         case .toi: return "TESS Objects of Interest (TOI) catalog."
+        case .tic_v8: return "TESS identification catalog"
         case .cumulative: return "Cumulative catalog of exoplanet candidates and confirmed planets from multiple missions."
         case .q1_q6_koi: return "Kepler Q1-Q6 KOI (Kepler Object of Interest) catalog."
         case .q1_q8_koi: return "Kepler Q1-Q8 KOI catalog."

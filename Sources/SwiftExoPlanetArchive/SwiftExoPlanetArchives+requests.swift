@@ -83,6 +83,8 @@ extension SwiftExoPlanetArchive {
                     result.setK2namesResponse(try! JSONDecoder().decode([K2namesResponse].self, from: data!))
                 case .toi:
                     result.setToiResponse(try! JSONDecoder().decode([ToiResponse].self, from: data!))
+                case .tic_v8:
+                    result.setTICV8Response(try! JSONDecoder().decode([TICV8Response].self, from: data!))
                 case .ukirttimeseries:
                     result.setUkirttimeseriesResponse(try! JSONDecoder().decode([UkirttimeseriesResponse].self, from: data!))
                 case .ml:

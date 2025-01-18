@@ -10,6 +10,7 @@ public struct EPAResponse:Codable {
     public var keplernamesResponse:[KeplernamesResponse]?
     public var k2namesResponse:[K2namesResponse]?
     public var toiResponse:[ToiResponse]?
+    public var ticV8Response:[TICV8Response]?
     public var ukirttimeseriesResponse:[UkirttimeseriesResponse]?
     public var mlResponse:[MlResponse]?
     public var object_aliasesResponse:[Object_aliasesResponse]?
@@ -58,7 +59,11 @@ public struct EPAResponse:Codable {
     public mutating func setToiResponse(_ toiResponse: [ToiResponse]) {
     self.toiResponse = toiResponse
     }
-    
+
+    public mutating func setTICV8Response(_ ticV8Response: [TICV8Response]) {
+        self.ticV8Response = ticV8Response
+    }
+
     public mutating func setUkirttimeseriesResponse(_ ukirttimeseriesResponse: [UkirttimeseriesResponse]) {
     self.ukirttimeseriesResponse = ukirttimeseriesResponse
     }
@@ -2042,3 +2047,76 @@ public var sy_gmagerr1:Double?
 public var sy_gmagerr2:Double?
 }
 
+public struct TICV8Response: Codable {
+    let id: Int
+    let version: String?
+    let twomass: String?
+    let tycho2: String?
+    let sdss: String?
+    let gaia: String?
+    let apass: String?
+    let hip: String?
+    let ra: Double?
+    let dec: Double?
+    let pmRA: Double?
+    let pmDec: Double?
+    let plx: Double?
+    let gallong: Double?
+    let gallat: Double?
+    let eclong: Double?
+    let eclat: Double?
+    let bmag: Double?
+    let vmag: Double?
+    let umag: Double?
+    let gmag: Double?
+    let rmag: Double?
+    let imag: Double?
+    let zmag: Double?
+    let jmag: Double?
+    let hmag: Double?
+    let kmag: Double?
+    let twomflag: String?
+    let spt: String?
+    let tmag: Double?
+    let tessflag: String?
+    let teff: Double?
+    let eTeff: Double?
+    let logg: Double?
+    let eLogg: Double?
+    let feh: Double?
+    let eFeh: Double?
+    let rad: Double?
+    let eRad: Double?
+    let mass: Double?
+    let eMass: Double?
+    let rho: Double?
+    let lum: Double?
+    let d: Double?
+    let eD: Double?
+    let ebv: Double?
+    let numcont: Int?
+    let contratio: Double?
+    let priority: Double?
+    let disposition: String?
+    let duplicateID: Int?
+    let eneg: Double?
+    let epos: Double?
+    let gaiaqflag: Int?
+    let gaiaAstroSig: Double?
+    let gaiaAstroDr: Double?
+    let gaiaDupsource: Int?
+    let gaiaRp: Double?
+    let gaiaBp: Double?
+    let gaiaEbp: Double?
+    let gaiaErp: Double?
+    let gaiaEbpRp: Double?
+    let gaiaAg: Double?
+    let gaiaEAg: Double?
+    let gaiaSpar: Double?
+    let gaiaESpar: Double?
+    let gaiaRUWE: Double?
+    let raOriginal: Double?
+    let decOriginal: Double?
+    let eRaOriginal: Double?
+    let eDecOriginal: Double?
+}

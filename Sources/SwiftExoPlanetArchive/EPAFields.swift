@@ -4027,3 +4027,153 @@ case .sy_gmagerr2: return "g (Sloan) Magnitude Lower Unc"
 }
 }
 
+enum tic_v8column:String, CaseIterable {
+    case id
+    case version
+    case twomass
+    case tycho2
+    case sdss
+    case gaia
+    case apass
+    case hip
+    case ra
+    case dec
+    case pmRA
+    case pmDec
+    case plx
+    case gallong
+    case gallat
+    case eclong
+    case eclat
+    case bmag
+    case vmag
+    case umag
+    case gmag
+    case rmag
+    case imag
+    case zmag
+    case jmag
+    case hmag
+    case kmag
+    case twomflag
+    case spt
+    case tmag
+    case tessflag
+    case teff
+    case eTeff
+    case logg
+    case eLogg
+    case feh
+    case eFeh
+    case rad
+    case eRad
+    case mass
+    case eMass
+    case rho
+    case lum
+    case d
+    case eD
+    case ebv
+    case numcont
+    case contratio
+    case priority
+    case disposition
+    case duplicateID
+    case eneg
+    case epos
+    case gaiaqflag
+    case gaiaAstroSig
+    case gaiaAstroDr
+    case gaiaDupsource
+    case gaiaRp
+    case gaiaBp
+    case gaiaEbp
+    case gaiaErp
+    case gaiaEbpRp
+    case gaiaAg
+    case gaiaEAg
+    case gaiaSpar
+    case gaiaESpar
+    case gaiaRUWE
+    case raOriginal
+    case decOriginal
+    case eRaOriginal
+    case eDecOriginal
+
+    var description: String {
+        switch self {
+        case .id: return "TIC Identifier"
+        case .version: return "Catalog version"
+        case .twomass: return "2MASS catalog identifier"
+        case .tycho2: return "Tycho-2 catalog identifier"
+        case .sdss: return "SDSS catalog identifier"
+        case .gaia: return "Gaia catalog identifier"
+        case .apass: return "APASS catalog identifier"
+        case .hip: return "HIPPARCOS catalog identifier"
+        case .ra: return "Right Ascension (J2000) in degrees"
+        case .dec: return "Declination (J2000) in degrees"
+        case .pmRA: return "Proper motion in Right Ascension in mas/year"
+        case .pmDec: return "Proper motion in Declination in mas/year"
+        case .plx: return "Parallax in mas"
+        case .gallong: return "Galactic Longitude in degrees"
+        case .gallat: return "Galactic Latitude in degrees"
+        case .eclong: return "Ecliptic Longitude in degrees"
+        case .eclat: return "Ecliptic Latitude in degrees"
+        case .bmag: return "B magnitude"
+        case .vmag: return "V magnitude"
+        case .umag: return "U magnitude"
+        case .gmag: return "G magnitude"
+        case .rmag: return "R magnitude"
+        case .imag: return "I magnitude"
+        case .zmag: return "Z magnitude"
+        case .jmag: return "J magnitude from 2MASS"
+        case .hmag: return "H magnitude from 2MASS"
+        case .kmag: return "K magnitude from 2MASS"
+        case .twomflag: return "2MASS quality flags"
+        case .spt: return "Spectral type"
+        case .tmag: return "TESS magnitude"
+        case .tessflag: return "TESS-specific flag"
+        case .teff: return "Stellar effective temperature in Kelvin"
+        case .eTeff: return "Uncertainty in effective temperature"
+        case .logg: return "Surface gravity in cm/s²"
+        case .eLogg: return "Uncertainty in surface gravity"
+        case .feh: return "Stellar metallicity [Fe/H]"
+        case .eFeh: return "Uncertainty in metallicity"
+        case .rad: return "Stellar radius in solar radii"
+        case .eRad: return "Uncertainty in stellar radius"
+        case .mass: return "Stellar mass in solar masses"
+        case .eMass: return "Uncertainty in stellar mass"
+        case .rho: return "Stellar density in g/cm³"
+        case .lum: return "Stellar luminosity in solar luminosities"
+        case .d: return "Distance in parsecs"
+        case .eD: return "Uncertainty in distance"
+        case .ebv: return "Reddening (E(B-V))"
+        case .numcont: return "Number of nearby contaminating stars"
+        case .contratio: return "Contamination ratio"
+        case .priority: return "Priority score for TESS targets"
+        case .disposition: return "Object disposition"
+        case .duplicateID: return "Duplicate TIC ID"
+        case .eneg: return "Negative energy correction"
+        case .epos: return "Positive energy correction"
+        case .gaiaqflag: return "Gaia quality flag"
+        case .gaiaAstroSig: return "Gaia astrometric signal"
+        case .gaiaAstroDr: return "Gaia astrometric dimension"
+        case .gaiaDupsource: return "Gaia duplicate source flag"
+        case .gaiaRp: return "Gaia RP magnitude"
+        case .gaiaBp: return "Gaia BP magnitude"
+        case .gaiaEbp: return "Uncertainty in Gaia BP magnitude"
+        case .gaiaErp: return "Uncertainty in Gaia RP magnitude"
+        case .gaiaEbpRp: return "Uncertainty in Gaia BP-RP color"
+        case .gaiaAg: return "Gaia extinction coefficient (G band)"
+        case .gaiaEAg: return "Uncertainty in Gaia extinction coefficient"
+        case .gaiaSpar: return "Gaia parallax"
+        case .gaiaESpar: return "Uncertainty in Gaia parallax"
+        case .gaiaRUWE: return "Gaia RUWE (Renormalized Unit Weight Error)"
+        case .raOriginal: return "Original Right Ascension"
+        case .decOriginal: return "Original Declination"
+        case .eRaOriginal: return "Uncertainty in original Right Ascension"
+        case .eDecOriginal: return "Uncertainty in original Declination"
+        }
+    }
+}
+
