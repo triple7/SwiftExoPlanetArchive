@@ -19,7 +19,12 @@ public struct EPAParameter:Codable {
         self.operation = operation
         self.value = value
     }
-    
+
+    public init() {
+        self.variable = ""
+        self.operation = .all
+        self.value = ""
+    }
     
     public mutating func setPostOperator(postOperator: EPAOperator) {
         self.postOperator = postOperator
