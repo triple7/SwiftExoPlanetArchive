@@ -1,4 +1,4 @@
-public struct EPAResponse:Codable {
+public struct EPAResponse:Codable, @unchecked Sendable {
     public var spectraResponse:[SpectraResponse]?
     public var pscompparsResponse:[PscompparsResponse]?
     public var superwasptimeseriesResponse:[SuperwasptimeseriesResponse]?
