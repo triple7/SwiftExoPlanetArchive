@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct EPAParameter:Codable {
+public struct EPAParameter:Codable, Sendable {
     let variable:String
     let operation:EPAOperator
     let value:String

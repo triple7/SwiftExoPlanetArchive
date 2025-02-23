@@ -8,7 +8,7 @@
 import Foundation
 
 
-public struct EPARequest {
+public struct EPARequest: Sendable {
     /** Exoplanet ARchive request formatter
      Creates a request Url from the API and configured parameters, with TAP sql like queries
      */

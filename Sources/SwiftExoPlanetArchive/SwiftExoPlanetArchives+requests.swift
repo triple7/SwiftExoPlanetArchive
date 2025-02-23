@@ -44,13 +44,13 @@ extension SwiftExoPlanetArchive {
         
 
         var request:EPARequest
-        if let selectQuery = selectQuery {
+        if let _ = selectQuery {
             request = EPARequest()
         } else {
             request = EPARequest(table: table, fields: fields, parameters: parameters, format: format)
         }
 
-        print(request.getUrl(selectQuery))
+//        print(request.getUrl(selectQuery))
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
@@ -95,7 +95,7 @@ extension SwiftExoPlanetArchive {
                     break
                 }
                 
-                self?.sysLog.append(EPASyslog(log: .OK, message: "query \(request.getSelectQuery()) result downloaded"))
+                self!.sysLog.append(EPASyslog(log: .OK, message: "result on \(table.id) downloaded"))
             }
             closure(result)
             return

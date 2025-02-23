@@ -5,7 +5,7 @@
 //  Created by Yuma decaux on 26/12/2024.
 //
 
-public enum EPAFormat:String, Codable, Identifiable {
+public enum EPAFormat:String, Codable, Identifiable, Sendable {
     case csv
     case json
     case ascii
@@ -17,7 +17,7 @@ public enum EPAFormat:String, Codable, Identifiable {
 }
 
 
-public enum EPATable: String, Codable, Identifiable, CaseIterable {
+public enum EPATable: String, Codable, Identifiable, CaseIterable, Sendable {
     case spectra
     case td
     case pscomppars
@@ -187,7 +187,7 @@ public enum EPATable: String, Codable, Identifiable, CaseIterable {
 }
 
 
-public enum EPAOperator:String, Codable, Identifiable {
+public enum EPAOperator:String, Codable, Identifiable, Sendable {
     case eq = "="
     case lt = "<"
     case gt = ">"
