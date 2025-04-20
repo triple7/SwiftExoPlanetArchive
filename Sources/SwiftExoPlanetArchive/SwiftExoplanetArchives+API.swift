@@ -7,7 +7,7 @@
 
 extension SwiftExoPlanetArchive {
 
-    func getEPData(from host: String, properties: @escaping (EPAResponse) -> Void) {
+    public func getEPProperties(from host: String, properties: @escaping (EPAResponse) -> Void) {
         let selectQuery = "SELECT *  FROM ps WHERE hostname = '\(host)'"
 
         queryEPA(selectQuery: selectQuery, table: .ps, fields: [], parameters: [], closure: { response in
