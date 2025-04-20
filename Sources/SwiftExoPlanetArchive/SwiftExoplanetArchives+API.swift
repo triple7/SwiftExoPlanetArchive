@@ -12,10 +12,8 @@ extension SwiftExoPlanetArchive {
 
         queryEPA(selectQuery: selectQuery, table: table, fields: [], parameters: [], closure: { response in
             
-
             columns(response)
             })
-        })
     }
 
     
