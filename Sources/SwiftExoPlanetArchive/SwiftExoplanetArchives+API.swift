@@ -17,7 +17,7 @@ extension SwiftExoPlanetArchive {
             let payload = response.psResponse!
             let planets = Set(arrayLiteral: payload.map{$0.pl_name!})
             let planetStrings = Array(planets).map{"'\($0)'"}.joined(separator: ",")
-            let spectralQuery = "SELECT * FROM spectra WHERE hostname in (\(planetStrings))"
+            let spectralQuery = "SELECT * FROM spectra WHERE pl_name in (\(planetStrings))"
 
             self.queryEPA(selectQuery: spectralQuery, table: .spectra, fields: [], parameters: [], closure: { spectraResponse in
                 
