@@ -13,11 +13,7 @@ extension SwiftExoPlanetArchive {
         queryEPA(selectQuery: selectQuery, table: .ps, fields: [], parameters: [], closure: { response in
             
 
-            let spectralQuery = """
-SELECT *
-  FROM spectra
- WHERE hostname = '\(host)'
-"""
+            let spectralQuery = "SELECT * FROM spectra WHERE hostname='\(host)'"
 
             self.queryEPA(selectQuery: spectralQuery, table: .spectra, fields: [], parameters: [], closure: { spectraResponse in
                 
@@ -29,5 +25,4 @@ SELECT *
     }
 
 
-    
 }
