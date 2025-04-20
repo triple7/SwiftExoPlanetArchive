@@ -7,6 +7,18 @@
 
 extension SwiftExoPlanetArchive {
 
+    public func getTableProperties(from table: EPATable, columns: @escaping (EPAResponse) -> Void) {
+        let selectQuery = "SELECT * FROM TAP_SCHEMA.columns WHERE table_name = '\(table.id)'"
+
+        queryEPA(selectQuery: selectQuery, table: table, fields: [], parameters: [], closure: { response in
+            
+
+            columns(response)
+            })
+        })
+    }
+
+    
     public func getEPProperties(from host: String, properties: @escaping (EPAResponse) -> Void) {
         let selectQuery = "SELECT *  FROM ps WHERE hostname = '\(host)'"
 

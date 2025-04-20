@@ -50,7 +50,7 @@ extension SwiftExoPlanetArchive {
             request = EPARequest(table: table, fields: fields, parameters: parameters, format: format)
         }
 
-        print(request.getUrl(selectQuery))
+//        print(request.getUrl(selectQuery))
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
