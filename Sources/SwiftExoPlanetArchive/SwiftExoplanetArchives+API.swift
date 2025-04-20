@@ -13,7 +13,11 @@ extension SwiftExoPlanetArchive {
         queryEPA(selectQuery: selectQuery, table: .ps, fields: [], parameters: [], closure: { response in
             
 
-            let spectralQuery = "SELECT * FROM spectra WHERE hostname='\(host)'"
+
+            let payload = response.psResponse!
+            let planets = payload.map{$0.pl_name!}
+            let planetStrings = planets.map{"'\($0)'"}.joined(separator: ",")
+            let spectralQuery = "SELECT * FROM spectra WHERE hostname in (\(planetStrings))"
 
             self.queryEPA(selectQuery: spectralQuery, table: .spectra, fields: [], parameters: [], closure: { spectraResponse in
                 
