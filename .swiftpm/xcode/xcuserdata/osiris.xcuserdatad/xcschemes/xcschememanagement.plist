@@ -10,5 +10,18 @@
 			<integer>0</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>SwiftExoPlanetArchive</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>SwiftExoPlanetArchiveTests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

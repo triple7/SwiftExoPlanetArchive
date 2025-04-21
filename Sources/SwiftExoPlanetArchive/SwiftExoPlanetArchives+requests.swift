@@ -33,8 +33,6 @@ extension SwiftExoPlanetArchive {
     }
 
 
-    /// Async/await version of `queryEPA(_:table:fields:parameters:format:)`
-    @available(macOS 12.0, iOS 15.0, *)
     public func queryEPA(selectQuery: String? = nil,
                          table: EPATable,
                          fields: [String],
