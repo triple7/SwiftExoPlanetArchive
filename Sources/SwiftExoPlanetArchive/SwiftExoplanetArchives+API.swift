@@ -39,12 +39,11 @@ extension SwiftExoPlanetArchive {
     public func getConfirmedExoplanets() async throws -> [StellarhostsResponse] {
         
         let table = EPATable.stellarhosts
-        let table = EPATable.stellarhosts
         let fields:[stellarhosts_columns] = [.hip_name, .gaia_id, .tic_id, .hostname, .st_age, .st_mass]
         let fieldStrings = fields.map{$0.id}
         
 
-        let stellarHostQuery = "select+\(fields.joined(separator: ","))+from+\(table.id)+where+\(stellarhosts_columns.hip_name.id)+is+not+null"
+        let stellarHostQuery = "select+\(fieldStrings.joined(separator: ","))+from+\(table.id)+where+\(stellarhosts_columns.hip_name.id)+is+not+null"
         
 
         let response = try await queryEPA(selectQuery: stellarHostQuery, table: .stellarhosts, fields: [], parameters: [], format: .json)
