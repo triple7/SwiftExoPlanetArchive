@@ -41,7 +41,7 @@ extension SwiftExoPlanetArchive {
         let stellarHostQuery = "select+\(fields.joined(separator: ","))+from+\(table.id)+where+\(stellarhosts_columns.hip_name.id)+is+not+null"
         
 
-        let response = try await queryEPA(selectQuery: stellarHostQuery, table: .pscomppars, fields: [], parameters: [], format: .json)
+        let response = try await queryEPA(selectQuery: stellarHostQuery, table: .stellarhosts, fields: [], parameters: [], format: .json)
         return response.stellarhostsResponse!
     }
 
