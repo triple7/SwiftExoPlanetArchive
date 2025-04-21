@@ -730,361 +730,370 @@ public var note:String?
 public var plntreflink:String?
 }
 
-public struct PsResponse:Codable {
-public var pl_name:String?
-public var pl_letter:String?
-public var hostname:String?
-public var hd_name:String?
-public var hip_name:String?
-public var tic_id:String?
-public var default_flag:Int?
-public var pl_refname:String?
-public var st_refname:String?
-public var sy_refname:String?
-public var disc_pubdate:String?
-public var disc_year:Int?
-public var discoverymethod:String?
-public var disc_locale:String?
-public var disc_facility:String?
-public var disc_instrument:String?
-public var disc_telescope:String?
-public var disc_refname:String?
-public var ra:Double?
-public var rastr:String?
-public var dec:Double?
-public var decstr:String?
-public var glon:Double?
-public var glat:Double?
-public var elon:Double?
-public var elat:Double?
-public var pl_orbper:Double?
-public var pl_orbpererr1:Double?
-public var pl_orbpererr2:Double?
-public var pl_orbperlim:Int?
-public var pl_orbperstr:String?
-public var pl_orblpererr1:Double?
-public var pl_orblper:Double?
-public var pl_orblpererr2:Double?
-public var pl_orblperlim:Int?
-public var pl_orblperstr:String?
-public var pl_orbsmax:Double?
-public var pl_orbsmaxerr1:Double?
-public var pl_orbsmaxerr2:Double?
-public var pl_orbsmaxlim:Int?
-public var pl_orbsmaxstr:String?
-public var pl_orbincl:Double?
-public var pl_orbinclerr1:Double?
-public var pl_orbinclerr2:Double?
-public var pl_orbincllim:Int?
-public var pl_orbinclstr:String?
-public var pl_orbtper:Double?
-public var pl_orbtpererr1:Double?
-public var pl_orbtpererr2:Double?
-public var pl_orbtperlim:Int?
-public var pl_orbtperstr:String?
-public var pl_orbeccen:Double?
-public var pl_orbeccenerr1:Double?
-public var pl_orbeccenerr2:Double?
-public var pl_orbeccenlim:Int?
-public var pl_orbeccenstr:String?
-public var pl_eqt:Double?
-public var pl_eqterr1:Double?
-public var pl_eqterr2:Double?
-public var pl_eqtlim:Int?
-public var pl_eqtstr:String?
-public var pl_occdep:Double?
-public var pl_occdeperr1:Double?
-public var pl_occdeperr2:Double?
-public var pl_occdeplim:Int?
-public var pl_occdepstr:String?
-public var pl_insol:Double?
-public var pl_insolerr1:Double?
-public var pl_insolerr2:Double?
-public var pl_insollim:Int?
-public var pl_insolstr:String?
-public var pl_dens:Double?
-public var pl_denserr1:Double?
-public var pl_denserr2:Double?
-public var pl_denslim:Int?
-public var pl_densstr:String?
-public var pl_trandep:Double?
-public var pl_trandeperr1:Double?
-public var pl_trandeperr2:Double?
-public var pl_trandeplim:Int?
-public var pl_trandepstr:String?
-public var pl_tranmid:Double?
-public var pl_tranmiderr1:Double?
-public var pl_tranmiderr2:Double?
-public var pl_tranmidlim:Int?
-public var pl_tranmidstr:String?
-public var pl_trandur:Double?
-public var pl_trandurerr1:Double?
-public var pl_trandurerr2:Double?
-public var pl_trandurlim:Int?
-public var pl_trandurstr:String?
-public var pl_rvamp:Double?
-public var pl_rvamperr1:Double?
-public var pl_rvamperr2:Double?
-public var pl_rvamplim:Int?
-public var pl_rvampstr:String?
-public var pl_radj:Double?
-public var pl_radjerr1:Double?
-public var pl_radjerr2:Double?
-public var pl_radjlim:Int?
-public var pl_radjstr:String?
-public var pl_rade:Double?
-public var pl_radeerr1:Double?
-public var pl_radeerr2:Double?
-public var pl_radelim:Int?
-public var pl_radestr:String?
-public var pl_ratror:Double?
-public var pl_ratrorerr1:Double?
-public var pl_ratrorerr2:Double?
-public var pl_ratrorlim:Int?
-public var pl_ratrorstr:String?
-public var pl_ratdor:Double?
-public var pl_ratdorerr1:Double?
-public var pl_ratdorerr2:Double?
-public var pl_ratdorlim:Int?
-public var pl_ratdorstr:String?
-public var pl_imppar:Double?
-public var pl_impparerr1:Double?
-public var pl_impparerr2:Double?
-public var pl_impparlim:Int?
-public var pl_impparstr:String?
-public var pl_cmassj:Double?
-public var pl_cmassjerr1:Double?
-public var pl_cmassjerr2:Double?
-public var pl_cmassjlim:Int?
-public var pl_cmassjstr:String?
-public var pl_cmasse:Double?
-public var pl_cmasseerr1:Double?
-public var pl_cmasseerr2:Double?
-public var pl_cmasselim:Int?
-public var pl_cmassestr:String?
-public var pl_massj:Double?
-public var pl_massjerr1:Double?
-public var pl_massjerr2:Double?
-public var pl_massjlim:Int?
-public var pl_massjstr:String?
-public var pl_masse:Double?
-public var pl_masseerr1:Double?
-public var pl_masseerr2:Double?
-public var pl_masselim:Int?
-public var pl_massestr:String?
-public var pl_bmassj:Double?
-public var pl_bmassjerr1:Double?
-public var pl_bmassjerr2:Double?
-public var pl_bmassjlim:Int?
-public var pl_bmassjstr:String?
-public var pl_bmasse:Double?
-public var pl_bmasseerr1:Double?
-public var pl_bmasseerr2:Double?
-public var pl_bmasselim:Int?
-public var pl_bmassestr:String?
-public var pl_bmassprov:String?
-public var pl_msinij:Double?
-public var pl_msinijerr1:Double?
-public var pl_msinijerr2:Double?
-public var pl_msinijlim:Int?
-public var pl_msinijstr:String?
-public var pl_msinie:Double?
-public var pl_msinieerr1:Double?
-public var pl_msinieerr2:Double?
-public var pl_msinielim:Int?
-public var pl_msiniestr:String?
-public var st_teff:Double?
-public var st_tefferr1:Double?
-public var st_tefferr2:Double?
-public var st_tefflim:Int?
-public var st_teffstr:String?
-public var st_met:Double?
-public var st_meterr1:Double?
-public var st_meterr2:Double?
-public var st_metlim:Int?
-public var st_metstr:String?
-public var st_radv:Double?
-public var st_radverr1:Double?
-public var st_radverr2:Double?
-public var st_radvlim:Int?
-public var st_radvstr:String?
-public var st_vsin:Double?
-public var st_vsinerr1:Double?
-public var st_vsinerr2:Double?
-public var st_vsinlim:Int?
-public var st_vsinstr:String?
-public var st_lum:Double?
-public var st_lumerr1:Double?
-public var st_lumerr2:Double?
-public var st_lumlim:Int?
-public var st_lumstr:String?
-public var st_logg:Double?
-public var st_loggerr1:Double?
-public var st_loggerr2:Double?
-public var st_logglim:Int?
-public var st_loggstr:String?
-public var st_age:Double?
-public var st_ageerr1:Double?
-public var st_ageerr2:Double?
-public var st_agelim:Int?
-public var st_agestr:String?
-public var st_mass:Double?
-public var st_masserr1:Double?
-public var st_masserr2:Double?
-public var st_masslim:Int?
-public var st_massstr:String?
-public var st_dens:Double?
-public var st_denserr1:Double?
-public var st_denserr2:Double?
-public var st_denslim:Int?
-public var st_densstr:String?
-public var st_rad:Double?
-public var st_raderr1:Double?
-public var st_raderr2:Double?
-public var st_radlim:Int?
-public var st_radstr:String?
-public var ttv_flag:Int?
-public var ptv_flag:Int?
-public var tran_flag:Int?
-public var rv_flag:Int?
-public var ast_flag:Int?
-public var obm_flag:Int?
-public var micro_flag:Int?
-public var etv_flag:Int?
-public var ima_flag:Int?
-public var pul_flag:Int?
-public var soltype:String?
-public var sy_snum:Int?
-public var sy_pnum:Int?
-public var sy_mnum:Int?
-public var st_nphot:Int?
-public var st_nrvc:Int?
-public var st_nspec:Int?
-public var pl_nnotes:Int?
-public var pl_ntranspec:Int?
-public var pl_nespec:Int?
-public var pl_ndispec:Int?
-public var sy_pm:Double?
-public var sy_pmerr1:Double?
-public var sy_pmerr2:Double?
-public var sy_pmstr:String?
-public var sy_pmra:Double?
-public var sy_pmraerr1:Double?
-public var sy_pmraerr2:Double?
-public var sy_pmrastr:String?
-public var sy_pmdec:Double?
-public var sy_pmdecerr1:Double?
-public var sy_pmdecerr2:Double?
-public var sy_pmdecstr:String?
-public var sy_plx:Double?
-public var sy_plxerr1:Double?
-public var sy_plxerr2:Double?
-public var sy_plxstr:String?
-public var sy_dist:Double?
-public var sy_disterr1:Double?
-public var sy_disterr2:Double?
-public var sy_diststr:String?
-public var sy_bmag:Double?
-public var sy_bmagerr1:Double?
-public var sy_bmagerr2:Double?
-public var sy_bmagstr:String?
-public var sy_vmag:Double?
-public var sy_vmagerr1:Double?
-public var sy_vmagerr2:Double?
-public var sy_vmagstr:String?
-public var sy_jmag:Double?
-public var sy_jmagerr1:Double?
-public var sy_jmagerr2:Double?
-public var sy_jmagstr:String?
-public var sy_hmag:Double?
-public var sy_hmagerr1:Double?
-public var sy_hmagerr2:Double?
-public var sy_hmagstr:String?
-public var sy_kmag:Double?
-public var sy_kmagerr1:Double?
-public var sy_kmagerr2:Double?
-public var sy_kmagstr:String?
-public var sy_umag:Double?
-public var sy_umagerr1:Double?
-public var sy_umagerr2:Double?
-public var sy_umagstr:String?
-public var sy_rmag:Double?
-public var sy_rmagerr1:Double?
-public var sy_rmagerr2:Double?
-public var sy_rmagstr:String?
-public var sy_imag:Double?
-public var sy_imagerr1:Double?
-public var sy_imagerr2:Double?
-public var sy_imagstr:String?
-public var sy_zmag:Double?
-public var sy_zmagerr1:Double?
-public var sy_zmagerr2:Double?
-public var sy_zmagstr:String?
-public var sy_w1mag:Double?
-public var sy_w1magerr1:Double?
-public var sy_w1magerr2:Double?
-public var sy_w1magstr:String?
-public var sy_w2mag:Double?
-public var sy_w2magerr1:Double?
-public var sy_w2magerr2:Double?
-public var sy_w2magstr:String?
-public var sy_w3mag:Double?
-public var sy_w3magerr1:Double?
-public var sy_w3magerr2:Double?
-public var sy_w3magstr:String?
-public var sy_w4mag:Double?
-public var sy_w4magerr1:Double?
-public var sy_w4magerr2:Double?
-public var sy_w4magstr:String?
-public var sy_gmag:Double?
-public var sy_gmagerr1:Double?
-public var sy_gmagerr2:Double?
-public var sy_gmagstr:String?
-public var sy_gaiamag:Double?
-public var sy_gaiamagerr1:Double?
-public var sy_gaiamagerr2:Double?
-public var sy_gaiamagstr:String?
-public var sy_tmag:Double?
-public var sy_tmagerr1:Double?
-public var sy_tmagerr2:Double?
-public var sy_tmagstr:String?
-public var pl_controv_flag:Int?
-public var pl_tsystemref:String?
-public var st_metratio:String?
-public var st_spectype:String?
-public var sy_kepmag:Double?
-public var sy_kepmagerr1:Double?
-public var sy_kepmagerr2:Double?
-public var sy_kepmagstr:String?
-public var st_rotp:Double?
-public var st_rotperr1:Double?
-public var st_rotperr2:Double?
-public var st_rotplim:Int?
-public var st_rotpstr:String?
-public var pl_projobliq:Double?
-public var pl_projobliqerr1:Double?
-public var pl_projobliqerr2:Double?
-public var pl_projobliqlim:Int?
-public var pl_projobliqstr:String?
-public var x:Double?
-public var pl_trueobliq:Double?
-public var pl_trueobliqerr1:Double?
-public var y:Double?
-public var z:Double?
-public var pl_trueobliqerr2:Double?
-public var htm20:Int?
-public var pl_trueobliqlim:Int?
-public var gaia_id:String?
-public var cb_flag:Int?
-public var pl_trueobliqstr:String?
-public var sy_icmag:Double?
-public var sy_icmagerr1:Double?
-public var sy_icmagerr2:Double?
-public var sy_icmagstr:String?
-public var rowupdate:String?
-public var pl_pubdate:String?
-public var releasedate:String?
-public var dkin_flag:Int?
+public struct PsResponse:Codable, Comparable {
+    public var pl_name:String?
+    public var pl_letter:String?
+    public var hostname:String?
+    public var hd_name:String?
+    public var hip_name:String?
+    public var tic_id:String?
+    public var default_flag:Int?
+    public var pl_refname:String?
+    public var st_refname:String?
+    public var sy_refname:String?
+    public var disc_pubdate:String?
+    public var disc_year:Int?
+    public var discoverymethod:String?
+    public var disc_locale:String?
+    public var disc_facility:String?
+    public var disc_instrument:String?
+    public var disc_telescope:String?
+    public var disc_refname:String?
+    public var ra:Double?
+    public var rastr:String?
+    public var dec:Double?
+    public var decstr:String?
+    public var glon:Double?
+    public var glat:Double?
+    public var elon:Double?
+    public var elat:Double?
+    public var pl_orbper:Double?
+    public var pl_orbpererr1:Double?
+    public var pl_orbpererr2:Double?
+    public var pl_orbperlim:Int?
+    public var pl_orbperstr:String?
+    public var pl_orblpererr1:Double?
+    public var pl_orblper:Double?
+    public var pl_orblpererr2:Double?
+    public var pl_orblperlim:Int?
+    public var pl_orblperstr:String?
+    public var pl_orbsmax:Double?
+    public var pl_orbsmaxerr1:Double?
+    public var pl_orbsmaxerr2:Double?
+    public var pl_orbsmaxlim:Int?
+    public var pl_orbsmaxstr:String?
+    public var pl_orbincl:Double?
+    public var pl_orbinclerr1:Double?
+    public var pl_orbinclerr2:Double?
+    public var pl_orbincllim:Int?
+    public var pl_orbinclstr:String?
+    public var pl_orbtper:Double?
+    public var pl_orbtpererr1:Double?
+    public var pl_orbtpererr2:Double?
+    public var pl_orbtperlim:Int?
+    public var pl_orbtperstr:String?
+    public var pl_orbeccen:Double?
+    public var pl_orbeccenerr1:Double?
+    public var pl_orbeccenerr2:Double?
+    public var pl_orbeccenlim:Int?
+    public var pl_orbeccenstr:String?
+    public var pl_eqt:Double?
+    public var pl_eqterr1:Double?
+    public var pl_eqterr2:Double?
+    public var pl_eqtlim:Int?
+    public var pl_eqtstr:String?
+    public var pl_occdep:Double?
+    public var pl_occdeperr1:Double?
+    public var pl_occdeperr2:Double?
+    public var pl_occdeplim:Int?
+    public var pl_occdepstr:String?
+    public var pl_insol:Double?
+    public var pl_insolerr1:Double?
+    public var pl_insolerr2:Double?
+    public var pl_insollim:Int?
+    public var pl_insolstr:String?
+    public var pl_dens:Double?
+    public var pl_denserr1:Double?
+    public var pl_denserr2:Double?
+    public var pl_denslim:Int?
+    public var pl_densstr:String?
+    public var pl_trandep:Double?
+    public var pl_trandeperr1:Double?
+    public var pl_trandeperr2:Double?
+    public var pl_trandeplim:Int?
+    public var pl_trandepstr:String?
+    public var pl_tranmid:Double?
+    public var pl_tranmiderr1:Double?
+    public var pl_tranmiderr2:Double?
+    public var pl_tranmidlim:Int?
+    public var pl_tranmidstr:String?
+    public var pl_trandur:Double?
+    public var pl_trandurerr1:Double?
+    public var pl_trandurerr2:Double?
+    public var pl_trandurlim:Int?
+    public var pl_trandurstr:String?
+    public var pl_rvamp:Double?
+    public var pl_rvamperr1:Double?
+    public var pl_rvamperr2:Double?
+    public var pl_rvamplim:Int?
+    public var pl_rvampstr:String?
+    public var pl_radj:Double?
+    public var pl_radjerr1:Double?
+    public var pl_radjerr2:Double?
+    public var pl_radjlim:Int?
+    public var pl_radjstr:String?
+    public var pl_rade:Double?
+    public var pl_radeerr1:Double?
+    public var pl_radeerr2:Double?
+    public var pl_radelim:Int?
+    public var pl_radestr:String?
+    public var pl_ratror:Double?
+    public var pl_ratrorerr1:Double?
+    public var pl_ratrorerr2:Double?
+    public var pl_ratrorlim:Int?
+    public var pl_ratrorstr:String?
+    public var pl_ratdor:Double?
+    public var pl_ratdorerr1:Double?
+    public var pl_ratdorerr2:Double?
+    public var pl_ratdorlim:Int?
+    public var pl_ratdorstr:String?
+    public var pl_imppar:Double?
+    public var pl_impparerr1:Double?
+    public var pl_impparerr2:Double?
+    public var pl_impparlim:Int?
+    public var pl_impparstr:String?
+    public var pl_cmassj:Double?
+    public var pl_cmassjerr1:Double?
+    public var pl_cmassjerr2:Double?
+    public var pl_cmassjlim:Int?
+    public var pl_cmassjstr:String?
+    public var pl_cmasse:Double?
+    public var pl_cmasseerr1:Double?
+    public var pl_cmasseerr2:Double?
+    public var pl_cmasselim:Int?
+    public var pl_cmassestr:String?
+    public var pl_massj:Double?
+    public var pl_massjerr1:Double?
+    public var pl_massjerr2:Double?
+    public var pl_massjlim:Int?
+    public var pl_massjstr:String?
+    public var pl_masse:Double?
+    public var pl_masseerr1:Double?
+    public var pl_masseerr2:Double?
+    public var pl_masselim:Int?
+    public var pl_massestr:String?
+    public var pl_bmassj:Double?
+    public var pl_bmassjerr1:Double?
+    public var pl_bmassjerr2:Double?
+    public var pl_bmassjlim:Int?
+    public var pl_bmassjstr:String?
+    public var pl_bmasse:Double?
+    public var pl_bmasseerr1:Double?
+    public var pl_bmasseerr2:Double?
+    public var pl_bmasselim:Int?
+    public var pl_bmassestr:String?
+    public var pl_bmassprov:String?
+    public var pl_msinij:Double?
+    public var pl_msinijerr1:Double?
+    public var pl_msinijerr2:Double?
+    public var pl_msinijlim:Int?
+    public var pl_msinijstr:String?
+    public var pl_msinie:Double?
+    public var pl_msinieerr1:Double?
+    public var pl_msinieerr2:Double?
+    public var pl_msinielim:Int?
+    public var pl_msiniestr:String?
+    public var st_teff:Double?
+    public var st_tefferr1:Double?
+    public var st_tefferr2:Double?
+    public var st_tefflim:Int?
+    public var st_teffstr:String?
+    public var st_met:Double?
+    public var st_meterr1:Double?
+    public var st_meterr2:Double?
+    public var st_metlim:Int?
+    public var st_metstr:String?
+    public var st_radv:Double?
+    public var st_radverr1:Double?
+    public var st_radverr2:Double?
+    public var st_radvlim:Int?
+    public var st_radvstr:String?
+    public var st_vsin:Double?
+    public var st_vsinerr1:Double?
+    public var st_vsinerr2:Double?
+    public var st_vsinlim:Int?
+    public var st_vsinstr:String?
+    public var st_lum:Double?
+    public var st_lumerr1:Double?
+    public var st_lumerr2:Double?
+    public var st_lumlim:Int?
+    public var st_lumstr:String?
+    public var st_logg:Double?
+    public var st_loggerr1:Double?
+    public var st_loggerr2:Double?
+    public var st_logglim:Int?
+    public var st_loggstr:String?
+    public var st_age:Double?
+    public var st_ageerr1:Double?
+    public var st_ageerr2:Double?
+    public var st_agelim:Int?
+    public var st_agestr:String?
+    public var st_mass:Double?
+    public var st_masserr1:Double?
+    public var st_masserr2:Double?
+    public var st_masslim:Int?
+    public var st_massstr:String?
+    public var st_dens:Double?
+    public var st_denserr1:Double?
+    public var st_denserr2:Double?
+    public var st_denslim:Int?
+    public var st_densstr:String?
+    public var st_rad:Double?
+    public var st_raderr1:Double?
+    public var st_raderr2:Double?
+    public var st_radlim:Int?
+    public var st_radstr:String?
+    public var ttv_flag:Int?
+    public var ptv_flag:Int?
+    public var tran_flag:Int?
+    public var rv_flag:Int?
+    public var ast_flag:Int?
+    public var obm_flag:Int?
+    public var micro_flag:Int?
+    public var etv_flag:Int?
+    public var ima_flag:Int?
+    public var pul_flag:Int?
+    public var soltype:String?
+    public var sy_snum:Int?
+    public var sy_pnum:Int?
+    public var sy_mnum:Int?
+    public var st_nphot:Int?
+    public var st_nrvc:Int?
+    public var st_nspec:Int?
+    public var pl_nnotes:Int?
+    public var pl_ntranspec:Int?
+    public var pl_nespec:Int?
+    public var pl_ndispec:Int?
+    public var sy_pm:Double?
+    public var sy_pmerr1:Double?
+    public var sy_pmerr2:Double?
+    public var sy_pmstr:String?
+    public var sy_pmra:Double?
+    public var sy_pmraerr1:Double?
+    public var sy_pmraerr2:Double?
+    public var sy_pmrastr:String?
+    public var sy_pmdec:Double?
+    public var sy_pmdecerr1:Double?
+    public var sy_pmdecerr2:Double?
+    public var sy_pmdecstr:String?
+    public var sy_plx:Double?
+    public var sy_plxerr1:Double?
+    public var sy_plxerr2:Double?
+    public var sy_plxstr:String?
+    public var sy_dist:Double?
+    public var sy_disterr1:Double?
+    public var sy_disterr2:Double?
+    public var sy_diststr:String?
+    public var sy_bmag:Double?
+    public var sy_bmagerr1:Double?
+    public var sy_bmagerr2:Double?
+    public var sy_bmagstr:String?
+    public var sy_vmag:Double?
+    public var sy_vmagerr1:Double?
+    public var sy_vmagerr2:Double?
+    public var sy_vmagstr:String?
+    public var sy_jmag:Double?
+    public var sy_jmagerr1:Double?
+    public var sy_jmagerr2:Double?
+    public var sy_jmagstr:String?
+    public var sy_hmag:Double?
+    public var sy_hmagerr1:Double?
+    public var sy_hmagerr2:Double?
+    public var sy_hmagstr:String?
+    public var sy_kmag:Double?
+    public var sy_kmagerr1:Double?
+    public var sy_kmagerr2:Double?
+    public var sy_kmagstr:String?
+    public var sy_umag:Double?
+    public var sy_umagerr1:Double?
+    public var sy_umagerr2:Double?
+    public var sy_umagstr:String?
+    public var sy_rmag:Double?
+    public var sy_rmagerr1:Double?
+    public var sy_rmagerr2:Double?
+    public var sy_rmagstr:String?
+    public var sy_imag:Double?
+    public var sy_imagerr1:Double?
+    public var sy_imagerr2:Double?
+    public var sy_imagstr:String?
+    public var sy_zmag:Double?
+    public var sy_zmagerr1:Double?
+    public var sy_zmagerr2:Double?
+    public var sy_zmagstr:String?
+    public var sy_w1mag:Double?
+    public var sy_w1magerr1:Double?
+    public var sy_w1magerr2:Double?
+    public var sy_w1magstr:String?
+    public var sy_w2mag:Double?
+    public var sy_w2magerr1:Double?
+    public var sy_w2magerr2:Double?
+    public var sy_w2magstr:String?
+    public var sy_w3mag:Double?
+    public var sy_w3magerr1:Double?
+    public var sy_w3magerr2:Double?
+    public var sy_w3magstr:String?
+    public var sy_w4mag:Double?
+    public var sy_w4magerr1:Double?
+    public var sy_w4magerr2:Double?
+    public var sy_w4magstr:String?
+    public var sy_gmag:Double?
+    public var sy_gmagerr1:Double?
+    public var sy_gmagerr2:Double?
+    public var sy_gmagstr:String?
+    public var sy_gaiamag:Double?
+    public var sy_gaiamagerr1:Double?
+    public var sy_gaiamagerr2:Double?
+    public var sy_gaiamagstr:String?
+    public var sy_tmag:Double?
+    public var sy_tmagerr1:Double?
+    public var sy_tmagerr2:Double?
+    public var sy_tmagstr:String?
+    public var pl_controv_flag:Int?
+    public var pl_tsystemref:String?
+    public var st_metratio:String?
+    public var st_spectype:String?
+    public var sy_kepmag:Double?
+    public var sy_kepmagerr1:Double?
+    public var sy_kepmagerr2:Double?
+    public var sy_kepmagstr:String?
+    public var st_rotp:Double?
+    public var st_rotperr1:Double?
+    public var st_rotperr2:Double?
+    public var st_rotplim:Int?
+    public var st_rotpstr:String?
+    public var pl_projobliq:Double?
+    public var pl_projobliqerr1:Double?
+    public var pl_projobliqerr2:Double?
+    public var pl_projobliqlim:Int?
+    public var pl_projobliqstr:String?
+    public var x:Double?
+    public var pl_trueobliq:Double?
+    public var pl_trueobliqerr1:Double?
+    public var y:Double?
+    public var z:Double?
+    public var pl_trueobliqerr2:Double?
+    public var htm20:Int?
+    public var pl_trueobliqlim:Int?
+    public var gaia_id:String?
+    public var cb_flag:Int?
+    public var pl_trueobliqstr:String?
+    public var sy_icmag:Double?
+    public var sy_icmagerr1:Double?
+    public var sy_icmagerr2:Double?
+    public var sy_icmagstr:String?
+    public var rowupdate:String?
+    public var pl_pubdate:String?
+    public var releasedate:String?
+    public var dkin_flag:Int?
+
+    public static func < (lhs: PsResponse, rhs: PsResponse) -> Bool {
+        if lhs.disc_year != rhs.disc_year {
+            return lhs.disc_telescope! < rhs.disc_telescope!
+        } else {
+            return lhs.disc_year! < rhs.disc_year!
+        }
+    }
+
 }
 
 public struct KeplernamesResponse:Codable {
@@ -1092,6 +1101,7 @@ public var kepid:String?
 public var pl_name:String?
 public var koi_name:String?
 public var kepler_name:String?
+    
 }
 
 public struct K2namesResponse:Codable {
