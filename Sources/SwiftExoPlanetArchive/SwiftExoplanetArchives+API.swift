@@ -51,8 +51,8 @@ extension SwiftExoPlanetArchive {
     }
 
     
-    public func getEPProperties(from host: String) async throws -> EPAResponse {
-        let selectQuery = "SELECT *  FROM ps WHERE hostname = '\(host)'"
+    public func getEPProperties(from host: String, field: ps_columns) async throws -> EPAResponse {
+        let selectQuery = "SELECT *  FROM ps WHERE \(field.id) = '\(host)'"
         var response = try await queryEPA(selectQuery: selectQuery, table: .ps, fields: [], parameters: [], format: .json)
         if let payload = response.psResponse {
             let planetNames = payload.compactMap { $0.pl_name }
